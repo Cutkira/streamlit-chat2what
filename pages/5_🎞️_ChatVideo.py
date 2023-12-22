@@ -26,6 +26,15 @@ if "LANGUAGE" not in st.session_state:
     st.session_state["LANGUAGE"] = "简体中文"
 
 if st.session_state["LANGUAGE"] == "简体中文":
+    st.markdown(
+        """
+        #### 注意：
+        1. 至少要在Setting页面设置OpenAI API Key，才能使用音视频翻译和内容摘要的功能。
+        2. 此外，您还需要设置 Pinecone API Key 才能够使用提问音视频内容。
+        3. 在使用ChatVideo功能时，请勿随意切换至其他页面（例如Chat，Setting等），ChatVideo不会缓存消息。
+        4. 当前版本仅支持每次上传一个文件。
+        """
+    )
     file_uploader_string = "上传视频或音频文件，点击‘提交并处理’"
     submit_button_string = "提交并处理"
     submit_button_spinner_string = "稍等..."
@@ -36,9 +45,18 @@ if st.session_state["LANGUAGE"] == "简体中文":
     summary_button_string = "总结！"
     summary_button_spinner_string = "总结中..."
     chat_input_string = "问点儿什么吧..."
-    qa_warning_string = "哎呀！ 如果你想测试 Q&A 功能，请先设置Pinecone API Key 和提交PDF文件"
+    qa_warning_string = "哎呀！ 如果你想测试 Q&A 功能，请先设置Pinecone API Key 和提交音视频文件"
     openai_error_string = "哎呀！你好像没设置OpenAI API Key。"
 elif st.session_state["LANGUAGE"] == "English":
+    st.markdown(
+        """
+        #### Note:
+        1. At least the OpenAI API Key must be set on the Setting page to use the audio/video translation and content summarization features.
+        2. In addition, you need to set up a Pinecone API Key to be able to use the question audio and video content.
+        3. When using the ChatVideo function, please do not switch to other pages (e.g. Chat, Setting, etc.), ChatPDF does not cache messages.
+        4. The current version only supports uploading one file at a time. 
+        """
+    )
     file_uploader_string = "Upload PDF file, click 'Submit and Process'"
     submit_button_string = "Submit and Process"
     submit_button_spinner_string = "Waiting..."
@@ -49,7 +67,7 @@ elif st.session_state["LANGUAGE"] == "English":
     summary_button_string = "Summary"
     summary_button_spinner_string = "Summarizing..."
     chat_input_string = "Ask something..."
-    qa_warning_string = "Oops! If you want to test Q&A, set valid Pinecone API Key and submit PDF file first."
+    qa_warning_string = "Oops! If you want to test Q&A, set valid Pinecone API Key and submit audio/video file first."
     openai_error_string = "Oops! It seems the OpenAI API Key is invalid."
 
 # switch page

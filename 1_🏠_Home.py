@@ -36,6 +36,8 @@ if st.session_state["LANGUAGE"] == "简体中文":
         #### 如果你...
         - 碰到BUG，理解万岁！
         - 有二次开发的想法，请到GitHub链接中下载源码！
+        #### 开源链接
+        https://github.com/Cutkira/streamlit-chat2what.git
         """
     )
 elif st.session_state["LANGUAGE"] == "English":
@@ -53,6 +55,8 @@ elif st.session_state["LANGUAGE"] == "English":
         #### If you...
         - Run into bugs, long live understanding.
         - Have any ideas for secondary development, go to the GitHub link and download the source code!
+        #### Open Source Link
+        https://github.com/Cutkira/streamlit-chat2what.git
         """
     )
 
